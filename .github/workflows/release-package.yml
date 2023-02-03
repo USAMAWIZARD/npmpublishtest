@@ -3,7 +3,8 @@ name: publish Node.js Package
 on:
   push:
     tags:
-      - master
+      - ams-v**
+
 
 jobs:
   publish-npmjs:
