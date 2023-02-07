@@ -24,7 +24,7 @@ jobs:
         id: get_version
         run: echo "::set-output name=VERSION::$(echo ${GITHUB_REF##*/} | cut -d v -f 2)"
       - run: npm install --include=dev
-      - run: npm install --save-dev @babel/cli
+      #- run: npm install --save-dev @babel/cli
       - run: npm run compile
       - run: git clone https://github.com/ant-media/ant-media-server-parent.git
       - run: cd ant-media-server-parent
