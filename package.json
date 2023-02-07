@@ -1,6 +1,6 @@
 {
   "name": "@usama123/test",
-  "version": "2.6.0-SNAPSHOT-2023-Feb-07-02-07",
+  "version": "2.6.0",
   "description": "WebRTC Adaptor for implementing a front end using Ant Media Server.",
   "main": "dist/webrtc_adaptor.js",
   "type": "commonjs",
