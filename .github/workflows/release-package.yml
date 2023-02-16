@@ -39,5 +39,3 @@ jobs:
       - run: npm version ${{ env.LATEST_SNAPSHOT_VERSION }}"-`date +"%Y-%b-%d-%I-%M"`"  --no-git-tag-version	
       - run: npm publish --tag SNAPSHOT	
       - run: echo `npm unpublish test@${{ env.PREVIOUS_SNAPSHOT_VERSION }}`
-        env:	
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}	
