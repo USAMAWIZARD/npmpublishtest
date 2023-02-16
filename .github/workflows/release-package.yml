@@ -25,6 +25,7 @@ jobs:
         id: get_version	
         run: echo "::set-output name=VERSION::$(echo ${GITHUB_REF##*/} | cut -d v -f 2)"	
       - run: npm ci
+      - echo //registry.npmjs.org/:_authToken=$NPM_TOKEN > .npmrc
       - run: npm install --include=dev	
       - run: npm install --save-dev @babel/cli	
       - run: npm run compile	
@@ -33,6 +34,5 @@ jobs:
       - run: npm version ${{ env.LATEST_SNAPSHOT_VERSION }}"-`date +"%Y-%b-%d-%I-%M"`"  --no-git-tag-version	
       - run: npm publish --tag SNAPSHOT	
       - run: echo `npm unpublish test@${{ env.PREVIOUS_SNAPSHOT_VERSION }}`
-
         env:	
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}	
